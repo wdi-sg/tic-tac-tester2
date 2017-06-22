@@ -23,7 +23,7 @@ It is assumed that the turns of the player will be automatically changed after a
 The application will console log all the passed or failed test.
 
 ## General tips
-Create a new .js file that contains your functions, and replace the `<script src="./testing-the-tester.js"></script>` tag with the path to your new file.
+Create a new .js file that contains your functions, and replace the `<script src="./testing-the-tester.js"></script>` (example.html, line 6) tag with the path to your new file.
 
 You might want to create a few variables to store information about the current state of the game. Eg. an array to represent the tic tac toe grid (eg. `var grid = [...]`), and a variable to track who the current player is (1 or 2), etc.
 
