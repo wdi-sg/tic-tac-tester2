@@ -6,7 +6,6 @@ var player1 = []
 var player2 = []
 
 function restart () {
-  console.log('restarted')
   for (var i = 0; i < arr.length; i++) {
     arr[i] = true
   }
@@ -18,6 +17,7 @@ function restart () {
 
 function isGameOver () {
   if (player1.length + player2.length === 9) {
+    winner = 3
     return true
   }
   for (var i = 0; i < winningMoves.length; i++) {
@@ -33,23 +33,23 @@ function isGameOver () {
 }
 
 function whoWon () {
-  if (isGameOver() === false) {
-    return 0
-  } else {
+  if (isGameOver() === true) {
     if (winner === 1) {
       return 1
     } else if (winner === 2) {
       return 2
-    } else {
+    } else if (winner === 3) {
       return 3
     }
+  } else {
+    return 0
   }
 }
 
 function playTurn (index) {
   if (arr[index] === false) {
     return false
-  } else {
+  } else if (arr[index] === true) {
     arr[index] = false
     if ((counter - 1) % 2 === 0) {
       player1.push(index)
