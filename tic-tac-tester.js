@@ -11,7 +11,7 @@ It should return a boolean value to indicate whether the move was allowed or not
 It should return a true or false if the game is over.
 
 # whoWon()
-It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player one. It should return 3 if the game is a draw.
+It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player won. It should return 3 if the game is a draw.
 
 # restart()
 It should restart the game so it can be played again.
