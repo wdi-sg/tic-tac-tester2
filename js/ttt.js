@@ -66,6 +66,9 @@ function tttModule () {
   } //close return object
 }
 
+
 var ttt = tttModule()
+//global variables for module to access
 var grid = [] // what has been played so far
 var counter = 0 // to check whose turn is it
+var allDivs = document.querySelectorAll('div div')
