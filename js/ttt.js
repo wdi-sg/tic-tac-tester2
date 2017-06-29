@@ -27,6 +27,8 @@ function tttModule () {
         player1Moves.push(grid[i])
       } else player2Moves.push(grid[i])
     }
+    console.log(player1Moves)
+    console.log(player2Moves)
 
     // sort player's moves numerically from smallest to largest
     player1sorted = player1Moves.sort(function (a, b) {
@@ -44,7 +46,9 @@ function tttModule () {
       winner = 2
     }
 
-    // check if draw. draw occurs even if last box gives a win? playermovestr is longer than winningcombi. cant win.
+    // check if draw. draw occurs even if last box gives a win?
+    //playermovestr is longer than winningcombi. cant win.
+    //check if "0412" contains chars "0", "1", "2"
     if (grid.length === 9) {
       winner = 3
     }
@@ -63,9 +67,8 @@ function tttModule () {
     isGameOver: isGameOver,
     playTurn: playTurn,
     whoWon: whoWon
-  } //close return object
+  } //close return
 }
-
 
 var ttt = tttModule()
 //global variables for module to access
