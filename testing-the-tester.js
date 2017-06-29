@@ -86,16 +86,16 @@ function whoWon () {
   return gameStatus
 }
 
-function playTurn (Index) {
+function playTurn (index) {
   var isAllowed = true
-  if (grid[Index] === 0) {
-    grid[Index] = 9
+  if (grid[index] === 0) {
+    grid[index] = 9
     turnCounter += 1
     if (playerTurn === 1) {
-      playerOne1[Index] = 9
+      playerOne1[index] = 9
       playerTurn = 2
     } else {
-      playerTwo1[Index] = 9
+      playerTwo1[index] = 9
       playerTurn = 1
     }
   } else {

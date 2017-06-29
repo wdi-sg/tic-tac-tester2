@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+}
+.grid {
+  text-align: center;
+}
+
+.b0, .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+background-color: orange;
+color: orange;
+display: inline-block;
+width: 150px;
+height: 150px;
+}
+ .top {
+   padding: 2px;
+ }
+
+ .mid {
+   padding: 2px;
+ }
+
+ .bot {
+   padding: 2px;
+ }
+
+.button {
+  width: 100px;
+  height: 25px;
+}
