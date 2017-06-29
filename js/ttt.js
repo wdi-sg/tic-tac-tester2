@@ -62,6 +62,8 @@ function tttModule () {
   }
 
   function newGame () {
+    grid = [null, null, null, null, null, null, null, null, null]
+    player = 1
     restartButton.parentNode.removeChild(restartButton)
     document.querySelector('.wrapper').style.opacity = 1
     winner.classList.remove('transform')
@@ -69,8 +71,6 @@ function tttModule () {
     for (var i = 0; i < 9; i++) {
       box[i].innerHTML = ''
     }
-    grid = [null, null, null, null, null, null, null, null, null]
-    player = 1
   }
 
   return {
