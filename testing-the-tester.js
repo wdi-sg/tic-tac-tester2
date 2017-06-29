@@ -1,8 +1,10 @@
 
 var grid = [] // what has been played so far
+var counter = 0; //to check whose turn is it
 
 function restart () {
   grid = []
+  counter = 0
   allDivs.forEach(function(el) {
   el.innerText = "" //removes the innertext from previous moves
   })
@@ -49,9 +51,6 @@ function whoWon () {
   }
   return winner
 }
-// if grid.length = 9 assign winner = 3. means draw.
-// no need for conditional cuz if either player 1 or 2 won,
-// it would have returned earlier
 
 function playTurn (index) {
   if (grid.includes(index) || isGameOver()) {
@@ -62,7 +61,7 @@ function playTurn (index) {
   }
 }
 
-var counter = 0;
+
 
 var allDivs = document.querySelectorAll('div div')
 allDivs.forEach(function(el) {
@@ -73,14 +72,15 @@ allDivs.forEach(function(el) {
     if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'. playturn is alrdy called
       if (counter % 2) {
           this.innerText = 'O'
-      } else this.innerText = 'X'
+      } else {
+        this.innerText = 'X'
+      }
       counter ++
     }
     whoWon()
     if (isGameOver()) {
-      alert(whoWon())
+      alert(whoWon()) //if game is over alert which player won/draw
     }
-    console.log(grid)
   })
 })
 
