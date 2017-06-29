@@ -1,19 +1,19 @@
 
 var grid = [] // what has been played so far
-var counter = 0; //to check whose turn is it
+var counter = 0 // to check whose turn is it
 
 function restart () {
   grid = []
   counter = 0
-  allDivs.forEach(function(el) {
-  el.innerText = "" //removes the innertext from previous moves
+  allDivs.forEach(function (el) {
+    el.innerText = '' // removes the innertext from previous moves
   })
 }
 
 function isGameOver () {
-  if (whoWon()) {
+  if (whoWon() !== 0) { // if winner !== 0, game is over. return true
     return true
-  } else return false
+  } else return false // if winner is still 0, fn returns false.
 }
 
 function whoWon () {
@@ -61,29 +61,28 @@ function playTurn (index) {
   }
 }
 
-
-
+// DOM manipulation
 var allDivs = document.querySelectorAll('div div')
-allDivs.forEach(function(el) {
-  el.addEventListener('click', function() {
-    var thisClass = this.className
-    var thisIndex = parseInt(thisClass.charAt(thisClass.length - 1)) //find index of board
+allDivs.forEach(function (el) {
+  el.addEventListener('click', function () {
+    var thisIndex = parseInt(this.id) // find index of board
 
-    if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'. playturn is alrdy called
+    if (playTurn(thisIndex)) { // if move is allowed, assign 'X' or 'O'. playturn is alrdy called
       if (counter % 2) {
-          this.innerText = 'O'
+        this.innerText = 'O'
       } else {
         this.innerText = 'X'
       }
-      counter ++
+      counter++
     }
     whoWon()
+
     if (isGameOver()) {
-      alert(whoWon()) //if game is over alert which player won/draw
+      alert(whoWon()) // if game is over alert which player won/draw
     }
   })
 })
 
-//reset the board
+// reset the board
 var h1 = document.querySelector('h1')
 h1.addEventListener('click', restart)
