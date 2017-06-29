@@ -6,7 +6,9 @@ function restart () {
 }
 
 function isGameOver () {
-  return false
+  if (whoWon()) {
+    alert('won')
+  } else return false
 }
 
 function whoWon () {
@@ -59,13 +61,20 @@ function playTurn (index) {
 
 var counter = 0;
 
-var allDivs = document.querySelectorAll('div')
+var allDivs = document.querySelectorAll('div div')
 allDivs.forEach(function(el) {
   el.addEventListener('click', function() {
-    if (counter % 2) {
-        this.innerText = 'O'
-    } else this.innerText = 'X'
-    counter ++
-  console.log(this.className)
+    var thisClass = this.className
+    var thisIndex = parseInt(thisClass.charAt(thisClass.length - 1)) //find index of board
+
+    if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'
+      if (counter % 2) {
+          this.innerText = 'O'
+      } else this.innerText = 'X'
+      counter ++
+    }
+    playTurn(thisIndex) //playturn pushes to grid
+    whoWon()
+    console.log(grid)
   })
 })

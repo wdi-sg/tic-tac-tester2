@@ -1,10 +1,12 @@
-body {
-  width: 25%;
-  margin: 100px auto;
-  font-size: 0;
+.wrapper {
+  min-width: 300px;
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-div {
+.wrapper div {
   width: 100px;
   height: 100px;
   border: 2px solid black;
