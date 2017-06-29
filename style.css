@@ -1,30 +1,36 @@
 h1 {
   text-align: center;
 }
-.grid {
-  text-align: center;
+.container {
+  width:800px;
+  min-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: orange;
 }
 
-.b0, .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8 {
+.grid {
 background-color: orange;
 color: orange;
 display: inline-block;
-width: 150px;
-height: 150px;
+width: 33%;
+height: 33%;
+min-height: 200px;
+border: 0.5px solid black
+
 }
- .top {
-   padding: 2px;
- }
 
- .mid {
-   padding: 2px;
- }
-
- .bot {
-   padding: 2px;
- }
 
 .button {
   width: 100px;
   height: 25px;
+}
+
+.X {
+  background-color: blue;
+}
+
+.O {
+  background-color: green;
 }
