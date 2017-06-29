@@ -69,6 +69,6 @@ function runWhenClicked(event) {
       grid[squareNumber] = 2
     }
   }
-  console.log(grid)
-  console.log(ttt()whoWon())
+  //console.log(grid)
+  console.log(whoWon())
 }
