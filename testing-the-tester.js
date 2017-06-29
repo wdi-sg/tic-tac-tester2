@@ -8,6 +8,7 @@ function restart () {
 function isGameOver () {
   if (whoWon()) {
     alert('won')
+    return true
   } else return false
 }
 
@@ -66,15 +67,22 @@ allDivs.forEach(function(el) {
   el.addEventListener('click', function() {
     var thisClass = this.className
     var thisIndex = parseInt(thisClass.charAt(thisClass.length - 1)) //find index of board
-
-    if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'
+    if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'. playturn is alrdy called
       if (counter % 2) {
           this.innerText = 'O'
       } else this.innerText = 'X'
       counter ++
     }
-    playTurn(thisIndex) //playturn pushes to grid
     whoWon()
     console.log(grid)
+  })
+})
+ //whoWon doesnt alert immediatly. it waits for next move
+
+//reset the board
+var h1 = document.querySelector('h1')
+h1.addEventListener('click', function() {
+  allDivs.forEach(function(el) {
+  el.innerText = ""
   })
 })
