@@ -30,25 +30,57 @@ function tttModule () {
     console.log(player1Moves)
     console.log(player2Moves)
 
-    // sort player's moves numerically from smallest to largest
-    player1sorted = player1Moves.sort(function (a, b) {
-      return a - b
-    })
-    player2sorted = player2Moves.sort(function (a, b) {
-      return a - b
-    })
-
-    // make arr a string and check if present in winningCombi
-    if (winningCombi.includes(player1sorted.join(''))) { // need to sort player moves from 0-8
+    //check if player wins
+    if (player1Moves.indexOf(0) > -1 && player1Moves.indexOf(1) > -1 && player1Moves.indexOf(2) > -1) {
       winner = 1
     }
-    if (winningCombi.includes(player2sorted.join(''))) { // need to sort player moves from 0-8
+    if (player2Moves.indexOf(0) > -1 && player2Moves.indexOf(1) > -1 && player2Moves.indexOf(2) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(3) > -1 && player1Moves.indexOf(4) > -1 && player1Moves.indexOf(5) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(3) > -1 && player2Moves.indexOf(4) > -1 && player2Moves.indexOf(5) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(6) > -1 && player1Moves.indexOf(7) > -1 && player1Moves.indexOf(8) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(6) > -1 && player2Moves.indexOf(7) > -1 && player2Moves.indexOf(8) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(0) > -1 && player1Moves.indexOf(3) > -1 && player1Moves.indexOf(6) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(0) > -1 && player2Moves.indexOf(3) > -1 && player2Moves.indexOf(6) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(1) > -1 && player1Moves.indexOf(4) > -1 && player1Moves.indexOf(7) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(1) > -1 && player2Moves.indexOf(4) > -1 && player2Moves.indexOf(7) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(2) > -1 && player1Moves.indexOf(5) > -1 && player1Moves.indexOf(8) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(2) > -1 && player2Moves.indexOf(5) > -1 && player2Moves.indexOf(8) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(2) > -1 && player1Moves.indexOf(4) > -1 && player1Moves.indexOf(6) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(2) > -1 && player2Moves.indexOf(4) > -1 && player2Moves.indexOf(6) > -1) {
+      winner = 2
+    }
+    if (player1Moves.indexOf(0) > -1 && player1Moves.indexOf(4) > -1 && player1Moves.indexOf(8) > -1) {
+      winner = 1
+    }
+    if (player2Moves.indexOf(0) > -1 && player2Moves.indexOf(4) > -1 && player2Moves.indexOf(8) > -1) {
       winner = 2
     }
 
-    // check if draw. draw occurs even if last box gives a win?
-    //playermovestr is longer than winningcombi. cant win.
-    //check if "0412" contains chars "0", "1", "2"
+    // check if draw
     if (grid.length === 9) {
       winner = 3
     }
