@@ -55,3 +55,23 @@ button {
 button:hover {
   background-color: pink;
 }
+
+@media (min-width: 600px) {
+  .grid {
+    width: 90px;
+    height: 90px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transform {
+    transform: scale(1.5) translateY(-116px);
+  }
+  h1 {
+    font-size: 40px;
+  }
+  button {
+    font-size: 15px;
+  }
+}
