@@ -1,0 +1,144 @@
+/*//border-style: dotted solid double dashed;
+top border is dotted
+right border is solid
+bottom border is double
+left border is dashed*/
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  width: 600px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #c8ff00;
+
+}
+
+h1 {
+  font-size: 70px;
+  font-family: Monoton;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #fff;
+  font-family: Monoton;
+  animation: neon1 1s ease-in-out infinite alternate;
+}
+
+h1:hover {
+  color: #BA01FF;
+  animation: none;
+}
+
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.7), 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(255,255,255,0.7), 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+
+
+body {
+  background-image:
+  url("http://www.abload.de/img/kofxialleybgzyde.gif");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+display: flex;
+flex-wrap: wrap-reverse;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+align-content: center;
+
+}
+
+
+button {
+  /*display: inline-block;*/
+  text-align: center;
+  height: 65px;
+  width: 170px;
+  font-size: 23px;
+  background-color: rgba(255,255,255,0.2);
+  border: 5px solid white;
+  color: #ff00de;
+  text-shadow: black 2px 2px;
+  margin: 5px;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  border-color: #c8ff00;
+  line-height: 150px;
+  cursor: pointer;
+  font-size: 30px;
+  font-family: arial;
+  text-decoration-color: #c8ff00;
+}
+
+a:link, a:visited, a:hover, a:active {
+color: black;
+text-decoration: none;
+}
+
+
+#zero, #three, #six {
+  margin-left: 11%;
+  min-width: 100px;
+  position: relative
+
+}
+
+
+
+
+#zero {
+    border-style: none solid solid none;
+}
+
+#one {
+    border-style: none solid solid solid;
+}
+
+#two {
+    border-style: none none solid solid;
+}
+
+#three {
+    border-style: solid solid solid none;
+}
+
+#four {
+    border-style: solid solid solid solid;
+}
+
+#five {
+    border-style: solid none solid solid;
+}
+
+#six {
+    border-style: solid solid none none;
+}
+
+#seven {
+    border-style: solid solid none solid;
+}
+
+#eight {
+    border-style: solid none none solid;
+}

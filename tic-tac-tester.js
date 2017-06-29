@@ -36,20 +36,28 @@ console.log('RUNNING TIC TAC TESTER')
 console.log('==================================')
 simulateGame('P1 Top Row Victory', [0, 3, 1, 4, 2], playerOne)
 simulateGame('P2 Top Row Victory', [8, 0, 3, 1, 4, 2], playerTwo)
+
 simulateGame('P1 Middle Row Victory', [3, 0, 4, 1, 5], playerOne)
 simulateGame('P2 Middle Row Victory', [8, 3, 0, 4, 1, 5], playerTwo)
+
 simulateGame('P1 Bottom Row Victory', [6, 0, 7, 4, 8], playerOne)
 simulateGame('P2 Bottom Row Victory', [2, 6, 0, 7, 4, 8], playerTwo)
+
 simulateGame('P1 Left Col Victory', [0, 4, 3, 5, 6], playerOne)
 simulateGame('P2 Left Col Victory', [1, 0, 4, 3, 5, 6], playerTwo)
+
 simulateGame('P1 Middle Col Victory', [1, 2, 4, 3, 7], playerOne)
 simulateGame('P2 Middle Col Victory', [0, 1, 2, 4, 3, 7], playerTwo)
+
 simulateGame('P1 Right Col Victory', [2, 1, 5, 3, 8], playerOne)
 simulateGame('P2 Right Col Victory', [0, 2, 1, 5, 3, 8], playerTwo)
+
 simulateGame('P1 TL to BR Victory', [0, 2, 4, 5, 8], playerOne)
 simulateGame('P1 TL to BR Victory', [1, 0, 2, 4, 5, 8], playerTwo)
+
 simulateGame('P2 TR to BL Victory', [2, 1, 4, 3, 6], playerOne)
 simulateGame('P2 TR to BL Victory', [0, 2, 1, 4, 3, 6], playerTwo)
+
 simulateGame('Draw Game', [0, 1, 2, 3, 5, 4, 6, 8, 7], playerDraw)
 
 console.log('==================================')
