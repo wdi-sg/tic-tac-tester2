@@ -2,11 +2,9 @@
 var grid = [null, null, null, null, null, null, null, null, null]
 var player = 1
 
-function ttt(){
 
-return{
-playTurn: function (index) {
-  if (grid[index] || ttt().isGameOver()) {
+function playTurn (index) {
+  if (grid[index] || isGameOver()) {
     return false
   } else {
     grid[index] = player
@@ -14,12 +12,14 @@ playTurn: function (index) {
     else player = 1
     return true
   }
-},
-isGameOver: function () {
-  if (ttt().whoWon()) return true
+}
+
+function isGameOver () {
+  if (whoWon()) return true
   return false
-},
-whoWon: function () {
+}
+
+function whoWon () {
   if (grid[0] && grid[0] === grid[1] && grid[0] === grid[2]) return grid[0]
   if (grid[3] && grid[3] === grid[4] && grid[3] === grid[5]) return grid[3]
   if (grid[6] && grid[6] === grid[7] && grid[6] === grid[8]) return grid[6]
@@ -31,13 +31,11 @@ whoWon: function () {
   if (grid[0] && grid[1] && grid[2] && grid[3] && grid[4] &&
     grid[5] && grid[6] && grid[7] && grid[8]) return 3
   return 0
-},
-restart: function (){
-  grid = [null, null, null, null, null, null, null, null, null]
-  player = 1
 }
 
-}
+function restart () {
+  grid = [null, null, null, null, null, null, null, null, null]
+  player = 1
 }
 
 document.addEventListener('DOMContentLoaded', ttt().restart())
@@ -45,8 +43,8 @@ document.addEventListener('DOMContentLoaded', ttt().restart())
 var allSquares = document.body.querySelectorAll(".aSquare")
 
 for (var i=0;i<allSquares.length;i++) {
-  allSquares[i].addEventListener('click', runWhenClicked)}
-
+  allSquares[i].addEventListener('click', runWhenClicked)
+}
 function runWhenClicked(event) {
   var squareThatWasClicked = event.target
   // var indexOfSquare = allSquares.indexOf(squareThatWasClicked)
@@ -72,5 +70,5 @@ function runWhenClicked(event) {
     }
   }
   console.log(grid)
-  console.log(ttt().whoWon())
+  console.log(ttt()whoWon())
 }
