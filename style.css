@@ -1,10 +1,12 @@
 .container{
   width: 700px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .row {
   width: 200px;
+  margin: 0 auto;
 }
 
 #\30, #\31, #\32, #\33, #\34, #\35, #\36, #\37, #\38 {
@@ -17,4 +19,26 @@
 
 p {
   text-align: center;
+}
+
+.after {
+  clear: both;
+  text-align: center;
+  padding-top: 10px;
+}
+
+h1  {
+  text-align: center;
+}
+h2  {
+  text-align: center;
+}
+/*
+.wrapper{
+  text-align: center;
+}*/
+
+button{
+display:block;
+margin: auto;
 }

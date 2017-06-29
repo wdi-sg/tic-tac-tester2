@@ -2,15 +2,13 @@
 var grid = [null, null, null, null, null, null, null, null, null]
 var player = 1
 
-function ttt(){
+function tttModule(){
 
   function playTurn (index) {
     if (grid[index] || isGameOver()) {
       return false
     } else {
       grid[index] = player
-      if (player === 1) player = 2
-      else player = 1
       return true
     }
   }
@@ -39,6 +37,6 @@ return{
 playTurn: playTurn,
 isGameOver: isGameOver,
 whoWon: whoWon,
-restart: restart
+restart: restart,
 }
 }
