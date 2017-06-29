@@ -9,12 +9,18 @@
   background-color: green;
   /*display: inline-block;*/
   border: 1px solid black;
+  transition: 1s;
+}
+.board:hover{
+  background-color: red;
 }
 
 p{
   position: absolute;
   font-size: 80px;
   margin: 0;
+  opacity:0;
+  transition:0.5s;
 }
 
 h1{
@@ -27,7 +33,7 @@ h1{
 
 .entireBoard{
   display: block;
-  width: 310px;
+  width: 306px;
   height: 306px;
   margin: auto auto;
   flex-wrap: wrap;
@@ -39,4 +45,7 @@ h1{
   width: 80px;
   height: 20px;
   margin: 0 auto;
+}
+.button:click{
+  background-color: red;
 }
