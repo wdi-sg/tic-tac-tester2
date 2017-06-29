@@ -3,11 +3,13 @@ var grid = [] // what has been played so far
 
 function restart () {
   grid = []
+  allDivs.forEach(function(el) {
+  el.innerText = ""
+  })
 }
 
 function isGameOver () {
   if (whoWon()) {
-    alert('won')
     return true
   } else return false
 }
@@ -74,6 +76,9 @@ allDivs.forEach(function(el) {
       counter ++
     }
     whoWon()
+    if (isGameOver()) {
+      alert('won')
+    }
     console.log(grid)
   })
 })
@@ -81,8 +86,4 @@ allDivs.forEach(function(el) {
 
 //reset the board
 var h1 = document.querySelector('h1')
-h1.addEventListener('click', function() {
-  allDivs.forEach(function(el) {
-  el.innerText = ""
-  })
-})
+h1.addEventListener('click', restart)
