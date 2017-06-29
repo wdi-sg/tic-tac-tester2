@@ -4,7 +4,7 @@ var grid = [] // what has been played so far
 function restart () {
   grid = []
   allDivs.forEach(function(el) {
-  el.innerText = ""
+  el.innerText = "" //removes the innertext from previous moves
   })
 }
 
@@ -69,6 +69,7 @@ allDivs.forEach(function(el) {
   el.addEventListener('click', function() {
     var thisClass = this.className
     var thisIndex = parseInt(thisClass.charAt(thisClass.length - 1)) //find index of board
+
     if  (playTurn(thisIndex)) { //if move is allowed, assign 'X' or 'O'. playturn is alrdy called
       if (counter % 2) {
           this.innerText = 'O'
@@ -77,12 +78,11 @@ allDivs.forEach(function(el) {
     }
     whoWon()
     if (isGameOver()) {
-      alert('won')
+      alert(whoWon())
     }
     console.log(grid)
   })
 })
- //whoWon doesnt alert immediatly. it waits for next move
 
 //reset the board
 var h1 = document.querySelector('h1')
