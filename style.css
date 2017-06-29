@@ -1,0 +1,16 @@
+.container {
+  width: 456px;
+  height: 456px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 150px;
+  font-size: 60pt;
+}
