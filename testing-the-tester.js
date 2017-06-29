@@ -1,62 +1,95 @@
-var arr = [true, true, true, true, true, true, true, true, true ]
-var counter = 0
-var winner = 0
-var winningMoves = [[0, 1, 2], [0, 3, 6], [0, 4, 8], [1, 4, 7], [2, 5, 8], [3, 4, 5], [6, 7, 8], [2, 4, 6]]
-var player1 = []
-var player2 = []
+var grid = [null, null, null, null, null, null, null, null, null]
+var player = 1
+var turn = document.querySelector('.selectTurn')
+// target the grids
+var board = document.querySelectorAll('.board')
+board
+board.forEach(function (square) {
+  square.addEventListener('click', function () {
+    if (playTurn(square.id)) {
+      var x = document.createElement('p')
+      if (turn.textContent === 'X turn') {
+        x.textContent = 'O'
+      } else {
+        x.textContent = 'X'
+      }
+      square.appendChild(x)
+    } else {
+      alert('Please make a valid move')
+    }
+    isGameOver()
+  })
+})
+// target whose turn is it
+// target restart button
+var restartButton = document.querySelector('.playButton')
+restartButton.addEventListener('click', restart)
 
-function restart () {
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = true
+function playTurn (index) {
+  if (grid[index] || isGameOver()) {
+    return false
+  } else {
+    grid[index] = player
+    if (player === 1) {
+      turn.textContent = 'X turn'
+      player = 2
+    } else {
+      turn.textContent = 'O turn'
+      player = 1
+    }
+    return true
   }
-  counter = 1
-  player1 = []
-  player2 = []
-  winner = 0
 }
 
 function isGameOver () {
-  if (player1.length + player2.length === 9) {
-    winner = 3
-    return true
-  }
-  for (var i = 0; i < winningMoves.length; i++) {
-    if (player1.sort().toString() === winningMoves[i].toString()) {
-      winner = 1
-      return true
-    } else if (player2.sort().toString() === winningMoves[i].toString()) {
-      winner = 2
-      return true
-    }
-  }
+  if (whoWon()) return true
   return false
 }
 
 function whoWon () {
-  if (isGameOver() === true) {
-    if (winner === 1) {
-      return 1
-    } else if (winner === 2) {
-      return 2
-    } else if (winner === 3) {
-      return 3
-    }
-  } else {
-    return 0
+  if (grid[0] && grid[0] === grid[1] && grid[0] === grid[2]) {
+    alert('The winner is Player ' + grid[0] + '!')
+    return grid[0]
   }
+  if (grid[3] && grid[3] === grid[4] && grid[3] === grid[5]) {
+    alert('The winner is Player ' + grid[3] + '!')
+    return grid[3]
+  }
+  if (grid[6] && grid[6] === grid[7] && grid[6] === grid[8]) {
+    alert('The winner is Player ' + grid[6] + '!')
+    return grid[6]
+  }
+  if (grid[0] && grid[0] === grid[3] && grid[0] === grid[6]) {
+    alert('The winner is Player ' + grid[0] + '!')
+    return grid[0]
+  }
+  if (grid[1] && grid[1] === grid[4] && grid[1] === grid[7]) {
+    alert('The winner is Player ' + grid[1] + '!')
+    return grid[1]
+  }
+  if (grid[2] && grid[2] === grid[5] && grid[2] === grid[8]) {
+    alert('The winner is Player ' + grid[2] + '!')
+    return grid[2]
+  }
+  if (grid[0] && grid[0] === grid[4] && grid[0] === grid[8]) {
+    alert('The winner is Player ' + grid[0] + '!')
+    return grid[0]
+  }
+  if (grid[2] && grid[2] === grid[4] && grid[2] === grid[6]) {
+    alert('The winner is Player ' + grid[2] + '!')
+    return grid[2]
+  }
+  if (grid[0] && grid[1] && grid[2] && grid[3] && grid[4] &&
+    grid[5] && grid[6] && grid[7] && grid[8]) {
+    alert("It's a DRAW!")
+    return 3
+  }
+  return 0
 }
 
-function playTurn (index) {
-  if (arr[index] === false) {
-    return false
-  } else if (arr[index] === true) {
-    arr[index] = false
-    if ((counter - 1) % 2 === 0) {
-      player1.push(index)
-    } else {
-      player2.push(index)
-    }
-    counter += 1
-    return true
+function restart () {
+  grid = [null, null, null, null, null, null, null, null, null]
+  for (var i = 0; i < grid.length; i++) {
+    board[i].textContent = ''
   }
 }

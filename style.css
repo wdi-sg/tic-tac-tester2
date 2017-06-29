@@ -1,0 +1,42 @@
+.board{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin: 10px;*/
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  /*display: inline-block;*/
+  border: 1px solid black;
+}
+
+p{
+  position: absolute;
+  font-size: 80px;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+}
+
+.selectTurn{
+  text-align: center;
+}
+
+.entireBoard{
+  display: block;
+  width: 310px;
+  height: 306px;
+  margin: auto auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.button{
+  display: block;
+  width: 80px;
+  height: 20px;
+  margin: 0 auto;
+}
