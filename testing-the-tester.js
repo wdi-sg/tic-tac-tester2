@@ -1,3 +1,32 @@
+document.addEventListener('DOMContentLoaded', init)
+
+function init () {
+  // targeting all the divs
+  var allBox = document.querySelectorAll('.box')
+  console.log(allBox)
+  allBox.forEach(function (div) {
+    div.addEventListener('click', color)
+    div.addEventListener('click', whoWon)
+  })
+}
+
+// to change color and run playTurn
+function color (event) {
+  var elem = event.target
+  playTurn(elem.id)
+  console.log(movesMade)
+  if (movesMade.length % 2 == 0) {
+    elem.style.backgroundColor = 'orange'
+    elem.textContent = 'X'
+  }
+
+  if (movesMade.length % 2 == 1) {
+    elem.style.backgroundColor = 'green'
+    elem.textContent = 'O'
+  }
+  // return whoWon()
+}
+
 // var grid =[]
 
 function restart () {
@@ -31,32 +60,32 @@ function whoWon () {
   // splitting player
   for (var i = 0; i < movesMade.length; i += 2) {
     for (var j = 1; j < movesMade.length; j += 2) {
-      play2moves.push(movesMade[i])
-      play1moves.push(movesMade[j])
+      play2moves.push(parseInt(movesMade[i]))
+      play1moves.push(parseInt(movesMade[j]))
     }
   }
-  console.log(play1moves)
-  console.log(play2moves)
 
   // changing gameWinner
   for (var i = 0; i < 8; i++) {
     if (play1moves.includes(winningCombi[i][0])
-      && play1moves.includes(winningCombi[i][1])
-      && play1moves.includes(winningCombi[i][2])) {
-      gameWinner = 1
+        && play1moves.includes(winningCombi[i][1])
+        && play1moves.includes(winningCombi[i][2])) {
+        gameWinner = 1
+      alert('player1wins');
     // restart()
     } else if (play2moves.includes(winningCombi[i][0])
       && play2moves.includes(winningCombi[i][1])
       && play2moves.includes(winningCombi[i][2])) {
       gameWinner = 2
+      alert('player2wins');
+
     // restart()
     } else if (movesMade.length > 7) {
       gameWinner = 3
+      alert('draw');
     // restart()
     }
   }
-// It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player one. It should return 3 if the game is a draw.
-  // isGameOver()
   return gameWinner
 }
 
@@ -64,6 +93,10 @@ function playTurn (index) {
   var ans = true
   if (movesMade.includes(index)) {
     ans = false
-  } else { movesMade.push(index) }
+    console.log(movesMade)
+  } else {
+    movesMade.push(index)
+    console.log(movesMade)
+  }
   return ans
 }

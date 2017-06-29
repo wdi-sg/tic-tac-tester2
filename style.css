@@ -1,0 +1,17 @@
+#gameBoard {
+  background-color: black;
+  width: 600px;
+  height: 630px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  display: inline-block;
+  width: 32%;
+  font-size: 50px;
+  text-align: center;
+}
