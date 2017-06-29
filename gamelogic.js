@@ -50,6 +50,7 @@ function runWhenClicked(event) {
   var squareNumber = squareThatWasClicked.id
   // console.log(squareNumber)
   if (!playTurn(squareNumber)) {
+    
     return whoWon()
   }
   else {
@@ -60,9 +61,9 @@ function runWhenClicked(event) {
       grid[squareNumber] = 1
     }
     else {
-      var shapeXElement = document.createElement("p")
-      shapeXElement.textContent = "o"
-      squareThatWasClicked.appendChild(shapeXElement)
+      var shapeOElement = document.createElement("p")
+      shapeOElement.textContent = "o"
+      squareThatWasClicked.appendChild(shapeOElement)
       grid[squareNumber] = 2
     }
   }
