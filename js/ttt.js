@@ -1,13 +1,12 @@
 // ctrl option F to lint
-
 function tttModule () {
-  //define all functions
-  function isGameOver() {
+  // define all functions
+  function isGameOver () {
     if (whoWon() !== 0) { // if winner !== 0, game is over. return true
       return true
     } else return false // if winner is still 0, fn returns false.
   }
-  function playTurn(index) {
+  function playTurn (index) {
     if (grid.includes(index) || isGameOver()) {
       return false
     } else {
@@ -15,7 +14,7 @@ function tttModule () {
       return true
     }
   }
-  function whoWon() {
+  function whoWon () {
     var winner = 0
     var player1Moves = []
     var player2Moves = []
@@ -30,7 +29,7 @@ function tttModule () {
     console.log(player1Moves)
     console.log(player2Moves)
 
-    //check if player wins
+    // check if player wins
     if (player1Moves.indexOf(0) > -1 && player1Moves.indexOf(1) > -1 && player1Moves.indexOf(2) > -1) {
       winner = 1
     }
@@ -86,24 +85,24 @@ function tttModule () {
     }
     return winner
   }
-  function restart() {
-      grid = []
-      counter = 0
-      allDivs.forEach(function (el) {
-        el.innerText = '' // removes the innertext from previous moves
-      })
-    } //end of restart fn
+  function restart () {
+    grid = []
+    counter = 0 //reset 'x' or 'o' tracker
+    allDivs.forEach(function (el) {
+      el.innerText = '' // removes the innertext from previous moves
+    })
+  } // end of restart fn
 
   return {
     restart: restart,
     isGameOver: isGameOver,
     playTurn: playTurn,
     whoWon: whoWon
-  } //close return
+  } // close return
 }
 
+//global variables
 var ttt = tttModule()
-//global variables for module to access
 var grid = [] // what has been played so far
 var counter = 0 // to check whose turn is it
 var allDivs = document.querySelectorAll('div div')

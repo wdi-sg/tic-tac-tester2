@@ -18,4 +18,8 @@
 
 h1 {
   text-align: center;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px 600px;
 }

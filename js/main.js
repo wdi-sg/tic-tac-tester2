@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', init)
 
-function init() {
-  var ttt = tttModule()
-
-  // DOM manipulation
+function init () {
   allDivs.forEach(function (el) {
     el.addEventListener('click', function () {
       var thisIndex = parseInt(this.id) // find index of board
