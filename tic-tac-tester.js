@@ -72,6 +72,11 @@ function simulateGame (testTitle, moves, winner) {
     expect('gameOver should return before a valid turn', isGameOver(), false)
     expect('playTurn should allow move to ' + moves[i], playTurn(moves[i]), true)
     expect('playTurn should not allow move to same square', playTurn(moves[0]), false)
+    console.log(grid)
+    console.log((grid[0] === 1 && grid[1] === 1 && grid[2] === 1 ))
+    console.log(currentPlayer)
+    console.log(grid.filter(function(num) { return num === 9}))
+    console.log(grid.filter(function(num) { return num === 9}).length === 0)
   }
 
   expect('playTurn should not allow move after gameover', playTurn(moves[0]), false)
