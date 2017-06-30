@@ -1,0 +1,82 @@
+body {
+  background-color: white;
+  text-align: center;
+  font-family: 'Merienda One', cursive;
+  color: black;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.wrapper {
+  width: 400px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid {
+  background-color: pink;
+  border: 3px solid white;
+  width: 120px;
+  height: 110px;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid:hover {
+  background-color: rgb(137, 232, 205);
+}
+
+p {
+  margin: 0 auto;
+  transition: 0.9s ease-in-out;
+  color: rgb(249, 39, 152);
+  font-size: 40px;
+  white-space: pre;
+}
+
+.transform {
+  transform: scale(2.5) translateY(-80px);
+}
+
+button {
+  font-family: 'Merienda One', cursive;
+  font-size: 18px;
+  border-radius: 15px;
+  background-color: rgb(137, 232, 205);
+  border: 1px solid white;
+  outline: none;
+}
+
+button:hover {
+  background-color: pink;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 300px;
+  }
+
+  .grid {
+    width: 90px;
+    height: 90px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transform {
+    transform: scale(1.5) translateY(-116px);
+  }
+  h1 {
+    font-size: 40px;
+  }
+  button {
+    font-size: 15px;
+  }
+}
