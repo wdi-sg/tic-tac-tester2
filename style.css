@@ -14,3 +14,6 @@
   line-height: 150px;
   font-size: 60pt;
 }
+.box:hover {
+  background-color: cyan;
+}
