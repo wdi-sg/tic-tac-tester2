@@ -37,10 +37,11 @@ p {
   transition: 0.9s ease-in-out;
   color: rgb(249, 39, 152);
   font-size: 40px;
+  white-space: pre;
 }
 
 .transform {
-  transform: scale(2.5) translateY(-85px);
+  transform: scale(2.5) translateY(-80px);
 }
 
 button {

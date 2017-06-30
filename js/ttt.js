@@ -55,16 +55,14 @@ function tttModule () {
   }
 
   function restart () {
-    restartButton = document.createElement('button')
-    restartButton.textContent = 'Start New Game'
-    document.body.appendChild(restartButton)
+    restartButton.style.display = ''
     restartButton.addEventListener('click', newGame)
   }
 
   function newGame () {
     grid = [null, null, null, null, null, null, null, null, null]
     player = 1
-    restartButton.parentNode.removeChild(restartButton)
+    restartButton.style.display = 'none'
     document.querySelector('.wrapper').style.opacity = 1
     winner.classList.remove('transform')
     winner.textContent = ''
