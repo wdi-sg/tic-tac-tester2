@@ -57,26 +57,26 @@ console.log(testsRun + ' TESTS RUN')
 if (testsPassed > 0) console.log('%c>' + testsPassed + ' TESTS PASSED', 'color: green')
 if (testsFailed > 0) console.log('%c>' + testsFailed + ' TESTS FAILED', 'color: red')
 // restart the game so it can run normally
-restart()
+ttt.restart()
 
 function simulateGame (testTitle, moves, winner) {
   console.log('-------------------------------')
   console.log('Testing: ' + testTitle)
   console.log('-------------------------------')
-  restart()
+  ttt.restart()
 
-  expect('gameOver should return false at start of game', isGameOver(), false)
-  expect('whoWon should return 0 at start of the game', whoWon(), 0)
+  expect('gameOver should return false at start of game', ttt.isGameOver(), false)
+  expect('whoWon should return 0 at start of the game', ttt.whoWon(), 0)
 
   for (var i = 0; i < moves.length; ++i) {
-    expect('gameOver should return before a valid turn', isGameOver(), false)
-    expect('playTurn should allow move to ' + moves[i], playTurn(moves[i]), true)
-    expect('playTurn should not allow move to same square', playTurn(moves[0]), false)
+    expect('gameOver should return before a valid turn', ttt.isGameOver(), false)
+    expect('playTurn should allow move to ' + moves[i], ttt.playTurn(moves[i]), true)
+    expect('playTurn should not allow move to same square', ttt.playTurn(moves[0]), false)
   }
 
-  expect('playTurn should not allow move after gameover', playTurn(moves[0]), false)
+  expect('playTurn should not allow move after gameover', ttt.playTurn(moves[0]), false)
 
-  expect('whoWon should return ' + winner + ' at end of the game', whoWon(), winner)
+  expect('whoWon should return ' + winner + ' at end of the game', ttt.whoWon(), winner)
 }
 
 function expect (expectationMessage, testFunctionResult, returnValue) {
