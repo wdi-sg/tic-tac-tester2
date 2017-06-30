@@ -1,0 +1,38 @@
+div {
+  display: inline-block;
+}
+
+.wrapper {
+  
+}
+
+.square1, .square2, .square3 {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-color: black;
+  border-style: solid;
+  float: left;
+}
+
+.square4, .square5, .square6 {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-color: black;
+  border-style: solid;
+  float: left;
+}
+
+.square7, .square8, .square9 {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-color: black;
+  border-style: solid;
+  float: left;
+}
+
+br {
+  clear: both
+}
