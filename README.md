@@ -30,3 +30,4 @@ You might want to create a few variables to store information about the current 
 There is no need to, but you can, look at the code in the tic-tac-tester.js file. This file contains code that will make use of the 4 functions you define (ie. it will call these functions) and check whether they return answers that they are supposed to. In other words, it will run all your functions multiple times to check that they work. 
 
 So for example if playTurn(0) is called by the code in tic-tac-tester.js, and your grid array indicates that it was previously already clicked, then whoWon() should return 0 (because whoWon() is supposed to do that, according to the specification above). 
+# Tic-Tac-Tester
