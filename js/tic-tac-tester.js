@@ -11,7 +11,7 @@ It should return a boolean value to indicate whether the move was allowed or not
 It should return a true or false if the game is over.
 
 # whoWon()
-It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player one. It should return 3 if the game is a draw.
+It should return 0 if the game is not yet finished. Else it should return either 1 or 2 depending on which player won. It should return 3 if the game is a draw.
 
 # restart()
 It should restart the game so it can be played again.
@@ -57,26 +57,26 @@ console.log(testsRun + ' TESTS RUN')
 if (testsPassed > 0) console.log('%c>' + testsPassed + ' TESTS PASSED', 'color: green')
 if (testsFailed > 0) console.log('%c>' + testsFailed + ' TESTS FAILED', 'color: red')
 // restart the game so it can run normally
-restart()
+ttt.restart()
 
 function simulateGame (testTitle, moves, winner) {
   console.log('-------------------------------')
   console.log('Testing: ' + testTitle)
   console.log('-------------------------------')
-  restart()
+  ttt.restart()
 
-  expect('gameOver should return false at start of game', isGameOver(), false)
-  expect('whoWon should return 0 at start of the game', whoWon(), 0)
+  expect('gameOver should return false at start of game', ttt.isGameOver(), false)
+  expect('whoWon should return 0 at start of the game', ttt.whoWon(), 0)
 
   for (var i = 0; i < moves.length; ++i) {
-    expect('gameOver should return before a valid turn', isGameOver(), false)
-    expect('playTurn should allow move to ' + moves[i], playTurn(moves[i]), true)
-    expect('playTurn should not allow move to same square', playTurn(moves[0]), false)
+    expect('gameOver should return before a valid turn', ttt.isGameOver(), false)
+    expect('playTurn should allow move to ' + moves[i], ttt.playTurn(moves[i]), true)
+    expect('playTurn should not allow move to same square', ttt.playTurn(moves[0]), false)
   }
 
-  expect('playTurn should not allow move after gameover', playTurn(moves[0]), false)
+  expect('playTurn should not allow move after gameover', ttt.playTurn(moves[0]), false)
 
-  expect('whoWon should return ' + winner + ' at end of the game', whoWon(), winner)
+  expect('whoWon should return ' + winner + ' at end of the game', ttt.whoWon(), winner)
 }
 
 function expect (expectationMessage, testFunctionResult, returnValue) {

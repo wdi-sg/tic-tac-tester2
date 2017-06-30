@@ -1,0 +1,25 @@
+.wrapper {
+  min-width: 300px;
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper div {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  display: inline-block;
+  font-size: 80px;
+  text-align: center;
+  vertical-align: top;
+}
+
+h1 {
+  text-align: center;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 5px;
+  margin: 10px 600px;
+}
