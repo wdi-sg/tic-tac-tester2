@@ -43,9 +43,11 @@ function init () {
         squareThatWasClicked.appendChild(shapeXElement)
         if(ttt.whoWon()===1 || ttt.whoWon()===2){
           h2.textContent = 'Player ' + ttt.whoWon() + ' wins!'
+          turn.textContent = ''
         }
         else if(ttt.whoWon() ===3){
           h2.textContent = 'DRAW!'
+          turn.textContent = ''
         }
         else{
         player = 2
@@ -57,9 +59,11 @@ function init () {
         squareThatWasClicked.appendChild(shapeOElement)
         if(ttt.whoWon()===1 || ttt.whoWon()===2){
             h2.textContent = 'Player ' + ttt.whoWon() + ' wins!'
+            turn.textContent = ''
           }
           else if(ttt.whoWon() ===3){
             h2.textContent = 'DRAW!'
+            turn.textContent = ''
           }
           else{
           player = 1
