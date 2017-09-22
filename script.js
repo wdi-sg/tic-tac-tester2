@@ -2,16 +2,39 @@
 
 
 function restart() {
-  console.log("restart");
+  isGameOver();
+
 }
 
+//logic that checks if game is over or not
+//the game is over only wheennnn
+//the game is NOT over when the grid array values are all '0'
+var total = 0;
+
+var total = 0;
+
 function isGameOver () {
-  //logic that checks if game is over or not
- return false
+  for (i = 0; i < grid.length; i ++) {
+        total += grid[i]
+  }
+        console.log ('total' + " " + total)
+        if (total === 0) {
+            console.log (false)
+      }
+    else
+     {
+       console.log(true)
+     }
+
 }
 
 function whoWon () {
- return 0
+ if (isGameOver == true) {
+   return 1
+ }
+ else {
+   return 0
+ }
 }
 
 //playTurn
@@ -21,12 +44,11 @@ var grid = [0,0,0,
 0,0,0,
 0,0,0]
 
-var moves = []
 
 
 function playTurn(num){
   var chosenGrid = grid[num] //num being the index of the grid
-  if (chosenGrid == 0) { //if the particular
+  if (chosenGrid === 0) { //if the particular
     //moves.push(num) //pushing in the moves array //remove coz no need
     grid[num] = 1
     return true
