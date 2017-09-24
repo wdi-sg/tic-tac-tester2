@@ -42,9 +42,12 @@ function playTurn(num){
 function whoWon (winner) {
   if (winner == false) {
   return 0
+  // this part still doesnt work. How to write such that
+  //if there is no winner yet, just move along.
 }
 else {
   return winner
+
 }
 }
   //if the moves array length is 5, winner is playerOne
