@@ -1,165 +1,83 @@
-var grid = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-var currentPlayer = 1
-var whoWonValue = 0
-var isGameOverValue = ''
-var playTurnValue = false
+var grid = [0, 0, 0, 0, 0, 0, 0, 0, 0] // declare empty grid
+var currentPlayer = 1 // start with player 1
+var whoWonValue = 0 // start at 0, player 1 or player 2, draw is 3
+var playTurnValue = false  // boolean value, indicate if move is allowed
+var isGameOverValue = false // boolean value, indicate if game is over
+var curTurn = 1;  // current turn
 
-var curTurn = 1;
+// flow of functions: restart() -> playTurn -> isGameOver -> whoWon -> restart -> ...
 
-var row1 = grid[0] + grid[1] + grid[2] // 0
-var row2 = grid[3] + grid[4] + grid[5] // 0
-var row3 = grid[6] + grid[7] + grid[8]
-var column1 = grid[0] + grid[3] + grid[6]
-var column2 = grid[1] + grid[4] + grid[7]
-var column3 = grid[2] + grid[5] + grid[8]
-var diagonal1 = grid[0] + grid[4] + grid[8]
-var diagonal2 = grid[2] + grid[4] + grid[6]
-
+function restart () {
+  grid = [0, 0, 0, 0, 0, 0, 0, 0, 0] // reset board
+  isGameOverValue = false // isGameOver should return false at start
+  whoWonValue = 0 // whoWon should return 0 at start of game
+  currentPlayer = 1 // currentPlayer should start with 1
+  curTurn = 1 // currentTurn is reset to 1
+}
 
 function playTurn (index) {
-
   playTurnValue = false
-
-
-  console.log(curTurn)
-
+  // console.log(curTurn)
   if (grid[index] === 0) {
+    playTurnValue = true //if grid is empty, playTurnValue is true
     if (currentPlayer === 1) {
-      grid[index] = 1
-      currentPlayer++
-      playTurnValue = true
+      grid[index] = 1 // player 1 indicates 1
+      currentPlayer++ //change to next player
+    } else {
+      grid[index] = -1 // player 2 indicates -1
+      currentPlayer-- // change to next player
     }
-    else {
-      grid[index] = -1
-      currentPlayer--
-      playTurnValue = true
-    }
-    curTurn++
   }
+  curTurn ++
   isGameOver() // after every turn, check for win
-  return playTurnValue // after each turn playTurn should =true
+  return playTurnValue // after each turn playTurn should be true
 }
 
 function isGameOver () {
-
-  row1 = grid[0] + grid[1] + grid[2] // 0
-  row2 = grid[3] + grid[4] + grid[5] // 0
+  // win conditions
+  row1 = grid[0] + grid[1] + grid[2]
+  row2 = grid[3] + grid[4] + grid[5]
   row3 = grid[6] + grid[7] + grid[8]
   column1 = grid[0] + grid[3] + grid[6]
   column2 = grid[1] + grid[4] + grid[7]
   column3 = grid[2] + grid[5] + grid[8]
   diagonal1 = grid[0] + grid[4] + grid[8]
   diagonal2 = grid[2] + grid[4] + grid[6]
-
-  // console.log(grid)
-  // console.log('===>>>', row1)
-  // console.log('===>>>', row2)
-  // console.log('===>>>', row3)
-  // console.log('===>>>', column1)
-  // console.log('===>>>', column2)
-  // console.log('===>>>', column3)
-  // console.log('===>>>', diagonal1)
-  // console.log('===>>>', diagonal2)
-
-    switch (true) {
-      case (row1 === 3 || row1 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(row1 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (row2 === 3 || row2 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(row2 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (row3 === 3 || row3 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(row3 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (column1 === 3 || column1 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(column1 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (column2 === 3 || column2 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(column2 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (column3 === 3 || column3 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(column3 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (diagonal1 === 3 || diagonal1 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(diagonal1 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      case (diagonal2 === 3 || diagonal2 === -3):
-        console.log('GAMEOVER')
-        playturnTrueOrFalse = false
-        if(diagonal2 === 3) {
-          whoWonValue = 1
-        } else {
-          whoWonValue = 2
-        }
-        break
-      default:
-        if (curTurn === 9) {
-          curTurn = 1;
-          whoWonValue = 3
-          console.log('DRAW')
-        }
+    if (row1 === 3 || row1 === -3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (row2 === 3 || row2 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (row3 === 3 || row3 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (column1 === 3 || column1 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (column2 === 3 || column2 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (column3 === 3 || column3 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (diagonal1 === 3 || diagonal1 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (diagonal2 === 3 || diagonal2 === 3) {
+      playTurnTrueOrFalse = false
+        whoWon()
+    } else if (curTurn === 9) {
+      whoWonValue = 3
     }
-    isGameOverValue = false
     return isGameOverValue
 }
 
-function whoWon () {
-  // row1 = grid[0] + grid[1] + grid[2] // 0
-  // row2 = grid[3] + grid[4] + grid[5] // 0
-  // row3 = grid[6] + grid[7] + grid[8]
-  // column1 = grid[0] + grid[3] + grid[6]
-  // column2 = grid[1] + grid[4] + grid[7]
-  // column3 = grid[2] + grid[5] + grid[8]
-  // diagonal1 = grid[0] + grid[4] + grid[8]
-  // diagonal2 = grid[2] + grid[4] + grid[6]
+function whoWon () { // built into isGameOver()
+  if (row1 === 3 || row2 === 3 || row3 === 3 || column1 === 3 || column2 === 3 || column3 === 3 || diagonal1 === 3 || diagonal2 === 3) {
+    whoWonValue = 1
+  } else if (row1 === -3 || row2 === -3 || row3 === -3 || column1 === -3 || column2 === -3 || column3 === -3 || diagonal1 === -3 || diagonal2 === -3) {
+    whoWonValue = 2
+  }
   return whoWonValue
-}
-
-function restart () {
-
-  grid = [0, 0, 0, 0, 0, 0, 0, 0, 0] // reset board
-  isGameOverValue = false // isGameOver should return false at start
-  whoWonValue = 0 // whoWon should return 0 at start of game
 }
