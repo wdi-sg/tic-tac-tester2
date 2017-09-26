@@ -17,12 +17,8 @@ for (var round = 1; round < 10; round++) {
       var move = Math.floor((Math.random() * 9)+1);
       console.log('move', move);
     }//this code needs fixing, only does it once if slot is taken.
-
-
   }
-
 }
-
 
 // function restart() {
 //   grid = [0,0,0,0,0,0,0,0,0]
@@ -62,7 +58,6 @@ function playTurn(index) {
   }
 }
 //if else logic:  playturn(move)? moves1/moves2.push(move), changePlayer()
-
 function changePlayer(){
   currentPlayer === 1? currentPlayer=2:currentPlayer=1
 }
