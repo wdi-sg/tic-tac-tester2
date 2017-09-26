@@ -44,12 +44,12 @@ function playTurn(index){
 function isGameOver () {
 //logic to chck if game is over or not
 console.log(gameEnd);
-if (gameEnd = 0) {
+if (gameEnd === 0) {
 
-  return true
+  return false
 }
 else {
-  return false
+  return true
 }
 
 }
@@ -82,12 +82,10 @@ function whoWon (){
     else if (points === 282 || points === 229 || points2 === 282 || points2 === 229){
       return 3
     }
+
     }
-
-if (gameEnd === 0){
-  return 0
-}
-
+    gameEnd = 0
+    return 0
 }
 
 
