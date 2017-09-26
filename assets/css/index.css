@@ -1,0 +1,20 @@
+.box {
+  border: 1px solid;
+  border-color: rgb(102, 103, 104);
+  width: 100px;
+  height:100px;
+
+}
+
+.ttt {
+  max-width: 320px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.everything {
+  max-width:320px;
+  margin: 0 auto;
+}
+body{
+  text-align: center;
+}
