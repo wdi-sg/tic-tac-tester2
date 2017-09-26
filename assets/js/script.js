@@ -3,18 +3,15 @@ var grid = [0,0,0,0,0,0,0,0,0]
 var moves = 0
 
 function restart () {
-  var grid = [0,0,0,0,0,0,0,0,0]
-  var currentPlayer = 1
-  var moves = 0
+  grid = [0,0,0,0,0,0,0,0,0]
+  currentPlayer = 1
+  moves = 0
 }
 
 function isGameOver () {
-    if(whoWon() === 0)
-    {
+    if(whoWon() === 0) {
     return false
-    }
-    else
-    {
+    } else {
     return true
     }
 }
@@ -65,21 +62,19 @@ else {
 }
 
 function playTurn(index){
-if(grid[index] === 0 && isGameOver() === false)
-{
-  if(currentPlayer === 1)
-  {
-  grid[index] = 1
-  currentPlayer = 2
-  }
-  else{
+  console.log(isGameOver())
+  if (grid[index] === 0 && isGameOver() === false) {
+    console.log('entered!')
+    if(currentPlayer === 1) {
+      grid[index] = 1
+      currentPlayer = 2
+    } else {
       grid[index] = 2
       currentPlayer = 1
-      }
-      moves ++
-return true
-}
-else {
-return false
-}
+    }
+    moves ++
+    return true
+  } else {
+    return false
+  }
 }
