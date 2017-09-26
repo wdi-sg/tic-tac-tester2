@@ -1,0 +1,14 @@
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 9999px;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: top 0.1s, left 0.1s;
+}
+
+body {
+  height: 100vh;
+}
