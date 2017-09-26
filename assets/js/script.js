@@ -1,3 +1,22 @@
+$(function() {
+  let $box = $(".box")
+
+  $box.on("click", changeBoxColor)
+
+  function changeBoxColor() {
+    let $thisBox = $(this).css("background-color")
+    if ($thisBox === "rgba(0, 0, 0, 0)") {
+      // console.log($(this).css("background-color"));
+      $(this).css("background-color", "yellow")
+    } else if ($thisBox === "rgb(255, 255, 0)") {
+      $(this).css("background-color", "blue")
+    } else {
+      // console.log($(this).css("background-color"));
+      $(this).css("background-color", "rgba(0, 0, 0, 0)")
+    }
+  }
+})
+
 let grid = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 let turns = 0
 let currentPlayer = 1

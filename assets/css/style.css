@@ -1,0 +1,24 @@
+.box {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  /*display: inline-block;*/
+  /*margin: -2px;*/
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 306px;
+  margin: 0 auto;
+  /*border: 1px solid red;*/
+}
+
+#main {
+  width: 500px;
+  margin: 0 auto;
+}
+
+body {
+  transition: all 1s ease-in;
+}
