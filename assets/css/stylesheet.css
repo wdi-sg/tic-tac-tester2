@@ -1,0 +1,12 @@
+.box{
+  border: 1px solid red;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+.container{
+  margin: 0 auto;
+}
+body {
+  transition: all 1s ease-in-out;
+}
