@@ -48,25 +48,44 @@ function whoWon () {
   for(var j = 0; j <= winningCondition.length-1; j++) {
     for(var k = 0; k <= grid.length-1; k++) {
 
-      // if game is still in progress
-      // if game is a draw
-      if (grid[k] === 0) {
-        if (grid[k] === 0) {
-          return 0
-        } else {
-          return 3
-        }
-      }
       // if player 1 or 2 wins
-      else if (grid[winningCondition[j][0]] === grid[winningCondition[j][1]] && grid[winningCondition[j][1]] === grid[winningCondition[j][2]]) {
+      if (grid[winningCondition[j][0]] === grid[winningCondition[j][1]] && grid[winningCondition[j][1]] === grid[winningCondition[j][2]]) {
         if (grid[winningCondition[j][0]] = 1) {
           return 1
         } else if (grid[winningCondition[j][0]] = 2) {
           return 2
         }
       }
+      // if game is still in progress
+      // if game is a draw
+      else if (grid[k] === 0) {
+        if (grid[k] === 0) {
+          return 0
+        } else {
+          return 3
+        }
+      }
+
+      // // if game is still in progress
+      // // if game is a draw
+      // if (grid[k] === 0) {
+      //   if (grid[k] === 0) {
+      //     return 0
+      //   } else {
+      //     return 3
+      //   }
+      // }
+      // // if player 1 or 2 wins
+      // else if (grid[winningCondition[j][0]] === grid[winningCondition[j][1]] && grid[winningCondition[j][1]] === grid[winningCondition[j][2]]) {
+      //   if (grid[winningCondition[j][0]] = 1) {
+      //     return 1
+      //   } else if (grid[winningCondition[j][0]] = 2) {
+      //     return 2
+      //   }
+      // }
     }
   }
+  return 3 //added
 }
 
 function restart() {
@@ -78,7 +97,7 @@ function restart() {
         0, 0, 0
         ]
 
-      moves = 0
+      // moves = 0
 
       player = 1
 
