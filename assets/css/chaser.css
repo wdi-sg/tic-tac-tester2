@@ -1,0 +1,24 @@
+
+body {
+  height: 100vh
+}
+
+.ball {
+width: 100px;
+height: 100px;
+background-color: red;
+border-radius: 9999px;
+position: relative;
+top: 0;
+left: 0;
+transition: top 0.5s , left 0.5s ;
+}
+
+/*when using transition, remember to put a start position i.e top: left: or start
+from background color. After which remember to put a duration
+
+transition: <prop> <duration> <easing fn> <delay>
+
+check our transition timing function mdn
+
+transition: top 1s ease-in 3s */
