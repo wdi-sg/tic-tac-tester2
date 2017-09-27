@@ -22,6 +22,7 @@ function addShoppingList () {
   $newList.text($shoppingItem + " ")
     $newList.append($removeBtn)
   $shoppingList.prepend($newList)
+  $('input').val('')
 }
 
 var $moveBtn = $('#move')
