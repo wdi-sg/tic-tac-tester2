@@ -1,0 +1,15 @@
+body {
+  height: 100vh;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+  /*default is ease in*/
+  transition: top 2s, left 2s;
+}
