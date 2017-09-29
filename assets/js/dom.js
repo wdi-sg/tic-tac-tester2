@@ -1,29 +1,51 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //need to run first
 
-$(document).ready(init)
+//$(document).ready(init)
 
 
 
-function init() {
-  //jquery runs from this point on.
-  var $box = $('.box')
-  //add event to element
-  $box.on('click', boxClick)
-  setInterval(timer, 3000)
-}
+// function init() {
+//   //jquery runs from this point on.
+//   var $box = $('.box')
+//   //add event to element
+//   $box.on('click', boxClick)
+//   setInterval(timer, 3000)
+//}
 
-function boxClick() {
-  count = 0
-  var $title = $('h1')
-  $title.text("Tic Tac Tock! : " + Num.timer()) //here need to put the func at "oo:" + timer
-}   //title text cannot us ',' that one only for console.log
-
-function timer () {
-  var $title = $('h1')
-  count += 1
-  $title.text("Tic Tac Tock! :" + count)
-
-}
+// function boxClick() {
+//   count = 0
+//   var $title = $('h1')
+//   $title.text("Tic Tac Tock! : " + Num.timer()) //here need to put the func at "oo:" + timer
+// }   //title text cannot us ',' that one only for console.log
+//
+// function timer () {
+//   var $title = $('h1')
+//   count += 1
+//   $title.text("Tic Tac Tock! :" + count)
+//
+// }
 
 
 
