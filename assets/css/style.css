@@ -1,18 +1,60 @@
 
- .container {
-  width: 300px;
+
+h1,h2{
+  text-align: center;
+  color: black;
+  font-family: 'Finger Paint';
+  font-size: 35px;
+  margin-bottom: 0;
+}
+h2{
   margin: 0 auto;
 }
 
+ .container {
+  width: 500px;
+  height: 700px;
+  margin: 0 auto;
+  background-image: url('/assets/images/tictactoebg.jpg');
+  border-radius: 19px;
+  background-size: 500px 700px;
+  border: 10px ridge black;
+}
+.player1{
+    background-image: url('/assets/images/player11.gif');
+    background-size: contain;
+}
+.player2{
+    background-image: url('/assets/images/player22.gif');
+      background-size: contain;
+}
 .wrapper {
   /* border: 1px solid blue; */
-  width: 156px;
+  padding: 100px;
+  width: 310px;
+  height: 220px;
   display: flex;
   flex-flow: row wrap;
 }
 
 .box {
-  border: 1px solid red;
-  width: 50px;
-  height: 50px;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0,0,0,0.5)
+}
+
+button{
+margin-left: 190px;
+border: none;
+width:120px;
+height: 60px;
+background-image: url('/assets/images/restartButton.png');
+background-position: left 540px bottom 300px;
+border-radius: 5px;
+box-shadow: 0 6px #63b2b7;
+}
+button:active {
+  box-shadow: 0 5px #2d827d;
+  transform: translateY(4px);
 }

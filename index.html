@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-
-
+    <link href='https://fonts.googleapis.com/css?family=Finger Paint' rel='stylesheet'>
 </head>
 <body>
   <div class="container">
  <!-- Non box elements -->
- <h1>TIC TAC TOE</h1>
- <p>About TTT</p>
+ <h1 id="currentplayer"><img src='/assets/images/titleText.png' alt=""></h1>
+ <h2 id="winner">Click on a square to begin</h2>
 
  <!-- grid elements -->
  <div class="wrapper">
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
-   <div class="box"></div>
+   <div class="box" data-index=0></div>
+   <div class="box" data-index=1></div>
+   <div class="box" data-index=2></div>
+   <div class="box" data-index=3></div>
+   <div class="box" data-index=4></div>
+   <div class="box" data-index=5></div>
+   <div class="box" data-index=6></div>
+   <div class="box" data-index=7></div>
+   <div class="box" data-index=8></div>
  </div>
+ <button id="restart" type="button" name="restartgame"></button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="/assets/js/dom.js" charset = "UTF-8"></script>
+<!-- <script src="/assets/js/dom.js" charset = "UTF-8"></script> -->
 <script src="/assets/js/script.js"></script>
-<script src="/assets/js/tic-tac-tester.js"></script>
+<script src="/assets/js/mainCode.js"></script>
+<!-- <script src="/assets/js/tic-tac-tester.js"></script> -->
 
 </body>
 </html>
