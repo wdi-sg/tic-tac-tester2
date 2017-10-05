@@ -15,17 +15,17 @@ h2{
   width: 500px;
   height: 700px;
   margin: 0 auto;
-  background-image: url('/assets/images/tictactoebg.jpg');
+  background-image: url('../images/tictactoebg.jpg');
   border-radius: 19px;
   background-size: 500px 700px;
   border: 10px ridge black;
 }
 .player1{
-    background-image: url('/assets/images/player11.gif');
+    background-image: url('../images/player11.gif');
     background-size: contain;
 }
 .player2{
-    background-image: url('/assets/images/player22.gif');
+    background-image: url('../images/player22.gif');
       background-size: contain;
 }
 .wrapper {
@@ -49,7 +49,7 @@ margin-left: 190px;
 border: none;
 width:120px;
 height: 60px;
-background-image: url('/assets/images/restartButton.png');
+background-image: url('../images/restartButton.png');
 background-position: left 540px bottom 300px;
 border-radius: 5px;
 box-shadow: 0 6px #63b2b7;
